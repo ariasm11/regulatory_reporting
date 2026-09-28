@@ -19,6 +19,32 @@ Designed to demonstrate the Finance Data Analyst skills in the supplied Revolut 
 
 The complete static console is included in [`web/`](web/README.md). Run `python3 -m http.server 8000 --directory web` and open `http://localhost:8000`. It shows saved results without querying BigQuery. The [hosted demo](https://siter-reporting-console.ariasmatias91.chatgpt.site) is private and may require access.
 
+## Interface screenshots
+
+Real captures of the August 2026 sample. The console displays saved results and does not query BigQuery.
+
+**Monthly close:** selected accounts, reconciliation, reporting flow and downloadable artifacts.
+
+![SITER monthly close overview showing four reported accounts and zero reconciliation difference](docs/images/ux-overview.jpg)
+
+<details>
+<summary>Quality controls and BigQuery evidence</summary>
+
+Local validation and documented cloud parity are shown separately from regulatory acceptance.
+
+![Quality controls and documented BigQuery execution evidence](docs/images/ux-controls.jpg)
+
+</details>
+
+<details>
+<summary>Fixed-width TXT inspector</summary>
+
+A selected field is highlighted at its exact positions in an account record.
+
+![TXT inspector highlighting the CBU field at positions 27 to 48](docs/images/ux-txt-inspector.jpg)
+
+</details>
+
 ## Quick start
 
 Python 3.10+; run commands from the repository root:
@@ -83,9 +109,9 @@ The manual's page 11 says “43” header characters in prose, but its table ass
 
 See `docs/bigquery.md` for setup, permissions, commands and the required cloud/local parity check. For the configured `regulatory-reporting-510011.Transactions.Sample` source, follow `docs/your_bigquery_setup_es.md` and run `python3 -m siter.cloud_demo` after authentication. The adapter loads explicit schemas or imports an existing typed transaction table after verifying its content against the local CSV. It uses SAFE_CAST and ASSERT checks, and creates a date-partitioned/clustered staging table. SQL computes metrics, population and trigger reasons. The same Python exporter/reader then produces and checks the final TXT.
 
-## Review and interview
+## Technical review
 
-Start with `docs/plan_es.md`, `docs/specification.md` and `docs/data_dictionary.md`. Show a threshold-boundary test, a duplicate-input failure, the May business-day cutoff test, and a final parsed TXT reconciliation. Review the independent fixture in `tests/test_siter.py`; do not describe synthetic tests as regulator certification. Use the measured benchmark with its platform and engine context.
+The specification and data dictionary describe the supported reporting rules and source contracts. `tests/test_siter.py` covers threshold boundaries, duplicate rejection, the May business-day cutoff and parsed TXT reconciliation. Benchmark evidence identifies the measured engine and environment; synthetic validation is distinct from regulatory acceptance.
 
 ## Official sources
 

@@ -39,4 +39,4 @@ La demo comienza privada. Para compartirla con reclutadores habrá que habilitar
 
 ## Validación de esta entrega
 
-Verificados: sintaxis JavaScript, existencia de descargas de seis meses, hashes, cantidades de cuentas y registros, y posiciones del inspector. Las 21 pruebas del pipeline pasan. No se realizó QA visual en un navegador ni validación nativa WebMCP; revisar la interfaz antes de compartirla externamente.
+Verificados: sintaxis JavaScript, existencia de descargas de seis meses, hashes, cantidades de cuentas y registros, y posiciones del inspector. Las 21 pruebas del pipeline pasan. Se revisaron en navegador las vistas de resumen, controles e inspector, y se capturaron para el README. No se realizó validación nativa WebMCP.

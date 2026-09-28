@@ -1,0 +1,14 @@
+{
+  "name": "siter-reporting-console",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite web --config vite.config.mjs"
+  },
+  "devDependencies": {
+    "vite": "^8.3.1"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  }
+}

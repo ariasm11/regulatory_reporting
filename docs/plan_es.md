@@ -15,7 +15,7 @@
 1. Revisar la demo privada: seleccionar agosto, abrir una cuenta informada, revisar controles, inspeccionar un campo y descargar TXT.
 2. Publicar y revisar el repositorio `ariasm11/regulatory_reporting`. Conservar generador, muestra, SQL, pruebas, evidencia y documentación; excluir credenciales y grandes datasets.
 3. El código de la consola se incluye en `web/` y su demo está versionada por Sites; la URL privada no será accesible a reclutadores sin cambiar su acceso.
-4. Preparar una demo de entrevista de 3 minutos. Mostrar una regla de inclusión, su cálculo, una posición del TXT, un control que bloquea errores y la evidencia de paridad.
+4. Mantener la trazabilidad entre reglas de inclusión, cálculos SQL, posiciones del TXT y controles de calidad.
 
 ## Alcance futuro, no bloqueante
 

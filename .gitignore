@@ -13,3 +13,6 @@ data/trial_100k/
 
 # Small synthetic downloadable ZIPs are part of the static demo.
 !web/data/**/*.zip
+
+node_modules/
+.vite/
