@@ -2,7 +2,7 @@
 
 A reproducible finance data pipeline for Argentine account reporting: **synthetic source transactions → monthly account models → eligibility decisions → fixed-width F.943 TXT → independent parser and reconciliation**.
 
-Designed to demonstrate the Finance Data Analyst skills in the supplied Revolut job description: SQL modeling, ETL, regulatory specifications, data quality, root-cause analysis and collaboration with reporting stakeholders. This project is independent of Revolut.
+I built this project to mirror a neobank's local regulatory reporting workflow, combining SQL modeling, ETL, regulatory specifications, data quality controls and root-cause analysis in a reproducible pipeline.
 
 ## What works
 
@@ -13,11 +13,11 @@ Designed to demonstrate the Finance Data Analyst skills in the supplied Revolut 
 - Original, replacement (rectificativa) and no-activity files; named according to the published convention.
 - Audit report per run, source/code SHA-256 hashes and a GitHub Actions test workflow.
 
-**Status:** local execution and validation tested. The user supplied a successful authenticated BigQuery sample run for August 2026 (1,200 source transactions); TXT/ZIP hashes match the stored local reference. Evidence and provenance: `examples/cloud_sample_202608.json`. The cloud validation milestone is closed on the 1,200-row August sample, as accepted by the user. Larger cloud trials are optional and have not been run; the million-row benchmark remains local only. The TXT follows the reviewed positional tables for this restricted scenario; it has **not** been accepted by an official ARCA validator. All numeric identities are generated for the demo, may coincide by chance with actual numbers and must never be used in a real submission.
+**Validation:** I tested the local pipeline and ran the August 2026 report in BigQuery against the 1,200-transaction source sample. The recorded cloud results match the local reference TXT/ZIP hashes and account decisions, with zero reconciliation difference. The execution summary and its provenance are preserved in `examples/cloud_sample_202608.json`. Cloud validation covers this sample and period; the million-row benchmark was run locally only. The TXT follows the reviewed positional tables for this restricted scenario; it has **not** been accepted by an official ARCA validator. All numeric identities are generated for the demo, may coincide by chance with actual numbers and must never be used in a real submission.
 
 ## Interface
 
-The complete static console is included in [`web/`](web/README.md). Run `python3 -m http.server 8000 --directory web` and open `http://localhost:8000`. It shows saved results without querying BigQuery. The [hosted demo](https://siter-reporting-console.ariasmatias91.chatgpt.site) is private and may require access.
+The complete static console is included in [`web/`](web/README.md). Run `python3 -m http.server 8000 --directory web` and open `http://localhost:8000`. It shows saved results without querying BigQuery.
 
 ## Interface screenshots
 
@@ -72,7 +72,7 @@ Create a complete replacement for the same period using `--sequence 1`; it regen
 
 ## Reporting console
 
-The UX uses saved sample outputs: overview, account decisions, controls, a fixed-position TXT inspector and monthly history. It makes no BigQuery calls. Run `python3 -m scripts.export_ux --out web/data` to reproduce its data and downloads. Only August carries the supplied BigQuery parity evidence; other periods are labeled local. See `docs/ux_es.md`.
+The UX uses saved sample outputs: overview, account decisions, controls, a fixed-position TXT inspector and monthly history. It makes no BigQuery calls. Run `python3 -m scripts.export_ux --out web/data` to reproduce its data and downloads. Only August carries the recorded BigQuery parity evidence; other periods are labeled local. See `docs/ux_es.md`.
 
 ## Optional controlled cloud trial
 
@@ -87,7 +87,7 @@ python3 -m siter.generate --out data/portfolio --transactions 10000000 --custome
 python3 -m siter.run --data data/portfolio --period 202608 --out output
 ```
 
-Default benchmark: 1,000,000 transactions, 20,000 customers, 20,000 accounts, March–August 2026. It processes all six periods, saving measured times and output checksums in `examples/benchmark.json`. Each local period scans the whole input for global duplicate detection. This measures a local reference implementation, **not BigQuery throughput or Revolut-scale capacity**. The generator uses uneven customer activity and lognormal amounts, with explicit representatives and term deposits.
+Default benchmark: 1,000,000 transactions, 20,000 customers, 20,000 accounts, March–August 2026. It processes all six periods, saving measured times and output checksums in `examples/benchmark.json`. Each local period scans the whole input for global duplicate detection. This measures a local reference implementation, **not BigQuery throughput or production banking capacity**. The generator uses uneven customer activity and lognormal amounts, with explicit representatives and term deposits.
 
 Large source data is excluded from git via `.gitignore`. The generator and seed are the reproducible source of that data; `data/sample` and compact examples are committed. A downloaded project bundle may include `data/portfolio` for convenience, while a GitHub clone generates it locally.
 
@@ -101,7 +101,7 @@ The engine rejects unsupported currencies, account types, transaction kinds and 
 
 ## Specification decisions requiring regulatory sign-off
 
-The manual's page 11 says “43” header characters in prose, but its table assigns positions through 255; its change log documents the 212-character filler. We implement the **255-position table**, including filler and version, and retain this discrepancy in `docs/specification.md`. Page 13 names the balance-sign field without enumerating its values; the demo interprets 0/1 consistently with adjacent sign fields. These decisions need confirmation before a real filing.
+The manual's page 11 says “43” header characters in prose, but its table assigns positions through 255; its change log documents the 212-character filler. I implemented the **255-position table**, including filler and version, and retain this discrepancy in `docs/specification.md`. Page 13 names the balance-sign field without enumerating its values; the demo interprets 0/1 consistently with adjacent sign fields. These decisions need confirmation before a real filing.
 
 `config/layout_v500.json` is the writer's versioned layout; `siter/validate.py` separately encodes positions to avoid testing the writer solely against itself. The parser checks structural and scenario rules, not ARCA registration or tax-database identity validation.
 

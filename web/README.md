@@ -16,9 +16,9 @@ To regenerate all six sample periods:
 python3 -m scripts.export_ux --out web/data
 ```
 
-Only August 2026 has documented BigQuery parity; the other months are local references. Cloud evidence is user-supplied, while downloadable files are local reproductions with matching August hashes. No ARCA acceptance is implied.
+Only August 2026 has documented BigQuery parity; the other months are local references. The recorded cloud execution summary is retained as evidence; downloadable files are local reproductions with matching August hashes. No ARCA acceptance is implied.
 
-The private Sites deployment is separate from this GitHub source. This folder can be served by any static web server; public hosting has not been enabled by publishing the repository.
+This folder can be served by any static web server. A public hosted demo is not available yet; use the local instructions above or the screenshots in the main README.
 
 ## Optional development preview
 

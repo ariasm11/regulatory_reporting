@@ -1,10 +1,10 @@
 # BigQuery execution guide
 
-The user supplied a successful August 2026 sample cloud run on 2026-09-28. See `examples/cloud_sample_202608.json` for the result and provenance. Source content, TXT and ZIP hashes match the stored local sample reference. This evidence covers the sample and one period, not the million-row dataset or all regulatory scenarios.
+I ran the August 2026 sample report in BigQuery on 2026-09-28. See `examples/cloud_sample_202608.json` for the result and provenance. Source content, TXT and ZIP hashes match the stored local sample reference. This evidence covers the sample and one period, not the million-row dataset or all regulatory scenarios.
 
-## Existing user-uploaded source
+## Existing source table
 
-For `regulatory-reporting-510011.Transactions.Sample` (US), start with [the Spanish integration guide](your_bigquery_setup_es.md) and `python3 -m siter.cloud_demo`. The user reported 1,200 rows and STRING/DATE/INT64 columns; the supplied successful execution also confirms the content identity check. The loader supports `--source-table project.dataset.table` with a separate working dataset.
+For `regulatory-reporting-510011.Transactions.Sample` (US), start with [the Spanish integration guide](your_bigquery_setup_es.md) and `python3 -m siter.cloud_demo`. The source contains 1,200 rows with STRING/DATE/INT64 columns; the recorded execution confirms the content identity check. The loader supports `--source-table project.dataset.table` with a separate working dataset.
 
 ## Setup
 
@@ -32,7 +32,7 @@ The main script has a 20 GB `maximum_bytes_billed` guard. This is a processing l
 4. Introduce a duplicate transaction in a copy of the sample; reload it and confirm the SQL assertion fails and no new TXT is produced.
 5. Load `data/portfolio`, repeat all six periods, and retain actual query metrics.
 
-Sample job metrics are retained in the supplied execution evidence. Large-scale cloud performance and actual billed cost remain unmeasured. The sample working dataset was populated by the user running this bundle.
+Sample job metrics are retained in the recorded execution summary. Large-scale cloud performance and actual billed cost remain unmeasured. I populated the sample working dataset with the included loader.
 
 ## Content identity and operating limits
 
