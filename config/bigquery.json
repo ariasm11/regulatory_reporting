@@ -1,0 +1,17 @@
+{
+  "project_id": "regulatory-reporting-510011",
+  "source_dataset": "Transactions",
+  "source_table": "Sample",
+  "location": "US",
+  "working_dataset": "siter_portfolio",
+  "status": "sample_202608_cloud_parity_pass_user_supplied_evidence",
+  "observed_row_count": 1200,
+  "observed_schema": {
+    "transaction_id": "STRING",
+    "account_id": "STRING",
+    "posted_date": "DATE",
+    "kind": "STRING",
+    "amount_cents": "INT64"
+  },
+  "evidence": "examples/cloud_sample_202608.json"
+}

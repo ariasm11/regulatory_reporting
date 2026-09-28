@@ -1,0 +1,48 @@
+{
+  "provenance": {
+    "type": "user_supplied_execution_summary",
+    "received_date": "2026-09-28",
+    "code_commit": "082eea0",
+    "independently_queried_cloud_jobs": false,
+    "omitted_fields": [
+      "local_directory",
+      "cloud_directory"
+    ],
+    "notes": "User-provided output, hashes checked against the stored local reference. Full cloud artifacts and job metadata were not retrieved by the assistant."
+  },
+  "result": {
+    "status": "PASS_LOCAL_BIGQUERY_PARITY_NOT_ARCA_ACCEPTANCE",
+    "source_table": "regulatory-reporting-510011.Transactions.Sample",
+    "period": "202608",
+    "load": {
+      "loaded_project": "regulatory-reporting-510011",
+      "dataset": "siter_portfolio",
+      "source_table": "regulatory-reporting-510011.Transactions.Sample",
+      "row_count": 1200,
+      "content_sha256": "b7ec7528001d749d7e9d38f6e5109606a2f19f12a465c2b892ebc86bb93ce04d",
+      "identity_job_id": "f3b1dd31-eb75-408a-9f7b-20d7953a06f0",
+      "identity_bytes_processed": 60619
+    },
+    "txt_sha256": "9ce7bc703a1037e78d7aca9fbc08a5c5ee9d6813698823408311ad598a97741c",
+    "zip_sha256": "dd2ee95bece68e7e2b9c301fb1b449c0c646a563efd8fdca4d3fb1716d346522",
+    "reported_accounts": 4,
+    "record_counts": {
+      "01": 1,
+      "02": 4,
+      "04": 1
+    },
+    "quality": {
+      "query_job_id": "99abbac5-66ad-47ec-b76a-41ad45b5ea28",
+      "bytes_processed": 241348,
+      "slot_millis": 78755,
+      "reconciliation_difference_cents": 0,
+      "source_binding": {
+        "source_table": "regulatory-reporting-510011.Transactions.Sample",
+        "row_count": 1200,
+        "content_sha256": "b7ec7528001d749d7e9d38f6e5109606a2f19f12a465c2b892ebc86bb93ce04d",
+        "identity_job_id": "95e0c300-a873-45bc-811a-f212bacadfa7",
+        "identity_bytes_processed": 0
+      }
+    }
+  }
+}

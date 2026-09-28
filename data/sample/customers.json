@@ -1,0 +1,402 @@
+[
+  {
+    "customer_id": "C0000001",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000000109",
+    "synthetic_name": "PERSONA FICTICIA 1",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000002",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000000206",
+    "synthetic_name": "PERSONA FICTICIA 2",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000003",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000000303",
+    "synthetic_name": "PERSONA FICTICIA 3",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000004",
+    "person_type": "PJ",
+    "document_type": "80",
+    "document": "30000000406",
+    "synthetic_name": "PERSONA FICTICIA 4",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000005",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000000508",
+    "synthetic_name": "PERSONA FICTICIA 5",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000006",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000000605",
+    "synthetic_name": "PERSONA FICTICIA 6",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000007",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000000702",
+    "synthetic_name": "PERSONA FICTICIA 7",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000008",
+    "person_type": "PJ",
+    "document_type": "80",
+    "document": "30000000805",
+    "synthetic_name": "PERSONA FICTICIA 8",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000009",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000000907",
+    "synthetic_name": "PERSONA FICTICIA 9",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000010",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000001008",
+    "synthetic_name": "PERSONA FICTICIA 10",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000011",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000001105",
+    "synthetic_name": "PERSONA FICTICIA 11",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000012",
+    "person_type": "PJ",
+    "document_type": "80",
+    "document": "30000001208",
+    "synthetic_name": "PERSONA FICTICIA 12",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000013",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000001318",
+    "synthetic_name": "PERSONA FICTICIA 13",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000014",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000001407",
+    "synthetic_name": "PERSONA FICTICIA 14",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000015",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000001504",
+    "synthetic_name": "PERSONA FICTICIA 15",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000016",
+    "person_type": "PJ",
+    "document_type": "80",
+    "document": "30000001607",
+    "synthetic_name": "PERSONA FICTICIA 16",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000017",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000001709",
+    "synthetic_name": "PERSONA FICTICIA 17",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000018",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000001806",
+    "synthetic_name": "PERSONA FICTICIA 18",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000019",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000001903",
+    "synthetic_name": "PERSONA FICTICIA 19",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000020",
+    "person_type": "PJ",
+    "document_type": "80",
+    "document": "30000002018",
+    "synthetic_name": "PERSONA FICTICIA 20",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000021",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000002101",
+    "synthetic_name": "PERSONA FICTICIA 21",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000022",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000002209",
+    "synthetic_name": "PERSONA FICTICIA 22",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000023",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000002306",
+    "synthetic_name": "PERSONA FICTICIA 23",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000024",
+    "person_type": "PJ",
+    "document_type": "80",
+    "document": "30000002409",
+    "synthetic_name": "PERSONA FICTICIA 24",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000025",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000002500",
+    "synthetic_name": "PERSONA FICTICIA 25",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000026",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000002608",
+    "synthetic_name": "PERSONA FICTICIA 26",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000027",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000002705",
+    "synthetic_name": "PERSONA FICTICIA 27",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000028",
+    "person_type": "PJ",
+    "document_type": "80",
+    "document": "30000002808",
+    "synthetic_name": "PERSONA FICTICIA 28",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000029",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000002918",
+    "synthetic_name": "PERSONA FICTICIA 29",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000030",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000003000",
+    "synthetic_name": "PERSONA FICTICIA 30",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000031",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000003108",
+    "synthetic_name": "PERSONA FICTICIA 31",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000032",
+    "person_type": "PJ",
+    "document_type": "80",
+    "document": "30000003200",
+    "synthetic_name": "PERSONA FICTICIA 32",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000033",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000003302",
+    "synthetic_name": "PERSONA FICTICIA 33",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000034",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000003418",
+    "synthetic_name": "PERSONA FICTICIA 34",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000035",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000003507",
+    "synthetic_name": "PERSONA FICTICIA 35",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000036",
+    "person_type": "PJ",
+    "document_type": "80",
+    "document": "30000003618",
+    "synthetic_name": "PERSONA FICTICIA 36",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000037",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000003701",
+    "synthetic_name": "PERSONA FICTICIA 37",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000038",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000003809",
+    "synthetic_name": "PERSONA FICTICIA 38",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000039",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000003906",
+    "synthetic_name": "PERSONA FICTICIA 39",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000040",
+    "person_type": "PJ",
+    "document_type": "80",
+    "document": "30000004002",
+    "synthetic_name": "PERSONA FICTICIA 40",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000041",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000004104",
+    "synthetic_name": "PERSONA FICTICIA 41",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000042",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000004201",
+    "synthetic_name": "PERSONA FICTICIA 42",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000043",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000004309",
+    "synthetic_name": "PERSONA FICTICIA 43",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000044",
+    "person_type": "PJ",
+    "document_type": "80",
+    "document": "30000004401",
+    "synthetic_name": "PERSONA FICTICIA 44",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000045",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000004503",
+    "synthetic_name": "PERSONA FICTICIA 45",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000046",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000004600",
+    "synthetic_name": "PERSONA FICTICIA 46",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000047",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000004708",
+    "synthetic_name": "PERSONA FICTICIA 47",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000048",
+    "person_type": "PJ",
+    "document_type": "80",
+    "document": "30000004800",
+    "synthetic_name": "PERSONA FICTICIA 48",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000049",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000004902",
+    "synthetic_name": "PERSONA FICTICIA 49",
+    "excluded": false
+  },
+  {
+    "customer_id": "C0000050",
+    "person_type": "PH",
+    "document_type": "80",
+    "document": "20000005003",
+    "synthetic_name": "PERSONA FICTICIA 50",
+    "excluded": false
+  }
+]

@@ -1,0 +1,106 @@
+{
+  "engine": "Python streaming reference; BigQuery not measured",
+  "dataset": {
+    "transactions": 1000000,
+    "customers": 20000,
+    "accounts": 20000,
+    "periods": 6,
+    "source_bytes": 69550021
+  },
+  "periods": [
+    {
+      "period": "202603",
+      "reported_accounts": 2154,
+      "period_transactions": 166667,
+      "model_seconds": 10.989,
+      "total_seconds": 11.974,
+      "txt_bytes": 581607,
+      "txt_sha256": "c1a28777f4132fa55ac542c02e0edf61c4d7c0b1c377f60388dca061166787fc",
+      "record_counts": {
+        "01": 1,
+        "02": 2154,
+        "03": 430,
+        "04": 388
+      }
+    },
+    {
+      "period": "202604",
+      "reported_accounts": 2247,
+      "period_transactions": 166667,
+      "model_seconds": 10.361,
+      "total_seconds": 11.338,
+      "txt_bytes": 603372,
+      "txt_sha256": "e2c65150561233a9b592c4ff17054f4da8d3f4fbaa05ab004f3b7e221474832a",
+      "record_counts": {
+        "01": 1,
+        "02": 2247,
+        "03": 427,
+        "04": 386
+      }
+    },
+    {
+      "period": "202605",
+      "reported_accounts": 2331,
+      "period_transactions": 166667,
+      "model_seconds": 11.292,
+      "total_seconds": 12.29,
+      "txt_bytes": 623098,
+      "txt_sha256": "70981195021a1fa86d849547a047de15b92654c6b20111187a37ac9f9a1e8d13",
+      "record_counts": {
+        "01": 1,
+        "02": 2331,
+        "03": 413,
+        "04": 386
+      }
+    },
+    {
+      "period": "202606",
+      "reported_accounts": 2431,
+      "period_transactions": 166667,
+      "model_seconds": 10.532,
+      "total_seconds": 11.705,
+      "txt_bytes": 648454,
+      "txt_sha256": "f0bff0f7bc30caeb822174b3df7f28eb73e1059d9ec98713e2eb1e97ddda14b4",
+      "record_counts": {
+        "01": 1,
+        "02": 2431,
+        "03": 421,
+        "04": 395
+      }
+    },
+    {
+      "period": "202607",
+      "reported_accounts": 2546,
+      "period_transactions": 166666,
+      "model_seconds": 11.102,
+      "total_seconds": 12.124,
+      "txt_bytes": 680249,
+      "txt_sha256": "86d5998ee4a4170d7c3c8afb08debf4365bb7c638a85a5fcdc65992f9e5a81d7",
+      "record_counts": {
+        "01": 1,
+        "02": 2546,
+        "03": 424,
+        "04": 423
+      }
+    },
+    {
+      "period": "202608",
+      "reported_accounts": 2524,
+      "period_transactions": 166666,
+      "model_seconds": 10.595,
+      "total_seconds": 11.888,
+      "txt_bytes": 664946,
+      "txt_sha256": "72170b150325317ecf2bbbe0460e1d532330db85f15405979ed8335128121185",
+      "record_counts": {
+        "01": 1,
+        "02": 2524,
+        "03": 395,
+        "04": 362
+      }
+    }
+  ],
+  "sum_of_period_seconds": 71.319,
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "notes": "Measured after final integrity and reconciliation changes. Each month validates/scans the full million-row batch. Individual times include validation, serialization and writes; generation time excluded."
+}

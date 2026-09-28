@@ -1,0 +1,479 @@
+{
+  "source_url": "https://www.afip.gob.ar/operacionesFinancieras/documentos/Manual-F943-SITER-A-Cuentas-y-Operaciones.pdf",
+  "version": "00500",
+  "records": {
+    "01": {
+      "length": 255,
+      "fields": [
+        {
+          "name": "record_type",
+          "start": 1,
+          "end": 2,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "reporter_cuit",
+          "start": 3,
+          "end": 13,
+          "width": 11,
+          "kind": "n"
+        },
+        {
+          "name": "period",
+          "start": 14,
+          "end": 19,
+          "width": 6,
+          "kind": "n"
+        },
+        {
+          "name": "sequence",
+          "start": 20,
+          "end": 21,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "entity_code",
+          "start": 22,
+          "end": 26,
+          "width": 5,
+          "kind": "n"
+        },
+        {
+          "name": "tax",
+          "start": 27,
+          "end": 30,
+          "width": 4,
+          "kind": "n"
+        },
+        {
+          "name": "concept",
+          "start": 31,
+          "end": 33,
+          "width": 3,
+          "kind": "n"
+        },
+        {
+          "name": "form",
+          "start": 34,
+          "end": 37,
+          "width": 4,
+          "kind": "n"
+        },
+        {
+          "name": "filler",
+          "start": 38,
+          "end": 249,
+          "width": 212,
+          "kind": "a"
+        },
+        {
+          "name": "version",
+          "start": 250,
+          "end": 254,
+          "width": 5,
+          "kind": "n"
+        },
+        {
+          "name": "no_activity",
+          "start": 255,
+          "end": 255,
+          "width": 1,
+          "kind": "n"
+        }
+      ]
+    },
+    "02": {
+      "length": 236,
+      "fields": [
+        {
+          "name": "record_type",
+          "start": 1,
+          "end": 2,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "account_type",
+          "start": 3,
+          "end": 4,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "number",
+          "start": 5,
+          "end": 26,
+          "width": 22,
+          "kind": "n"
+        },
+        {
+          "name": "cbu",
+          "start": 27,
+          "end": 48,
+          "width": 22,
+          "kind": "n"
+        },
+        {
+          "name": "currency",
+          "start": 49,
+          "end": 51,
+          "width": 3,
+          "kind": "a"
+        },
+        {
+          "name": "branch",
+          "start": 52,
+          "end": 56,
+          "width": 5,
+          "kind": "n"
+        },
+        {
+          "name": "document_type",
+          "start": 57,
+          "end": 58,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "document",
+          "start": 59,
+          "end": 69,
+          "width": 11,
+          "kind": "n"
+        },
+        {
+          "name": "caja_valores",
+          "start": 70,
+          "end": 74,
+          "width": 5,
+          "kind": "n"
+        },
+        {
+          "name": "role",
+          "start": 75,
+          "end": 76,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "member_count",
+          "start": 77,
+          "end": 78,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "additional_cards",
+          "start": 79,
+          "end": 80,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "credits",
+          "start": 81,
+          "end": 98,
+          "width": 18,
+          "kind": "n"
+        },
+        {
+          "name": "own_credits",
+          "start": 99,
+          "end": 116,
+          "width": 18,
+          "kind": "n"
+        },
+        {
+          "name": "loan_credits",
+          "start": 117,
+          "end": 134,
+          "width": 18,
+          "kind": "n"
+        },
+        {
+          "name": "term_credits",
+          "start": 135,
+          "end": 152,
+          "width": 18,
+          "kind": "n"
+        },
+        {
+          "name": "cash",
+          "start": 153,
+          "end": 170,
+          "width": 18,
+          "kind": "n"
+        },
+        {
+          "name": "balance_sign",
+          "start": 171,
+          "end": 171,
+          "width": 1,
+          "kind": "n"
+        },
+        {
+          "name": "balance",
+          "start": 172,
+          "end": 189,
+          "width": 18,
+          "kind": "n"
+        },
+        {
+          "name": "card_sign",
+          "start": 190,
+          "end": 190,
+          "width": 1,
+          "kind": "n"
+        },
+        {
+          "name": "card",
+          "start": 191,
+          "end": 208,
+          "width": 18,
+          "kind": "n"
+        },
+        {
+          "name": "foreign_card_sign",
+          "start": 209,
+          "end": 209,
+          "width": 1,
+          "kind": "n"
+        },
+        {
+          "name": "foreign_card",
+          "start": 210,
+          "end": 227,
+          "width": 18,
+          "kind": "n"
+        },
+        {
+          "name": "event",
+          "start": 228,
+          "end": 228,
+          "width": 1,
+          "kind": "a"
+        },
+        {
+          "name": "event_date",
+          "start": 229,
+          "end": 236,
+          "width": 8,
+          "kind": "n"
+        }
+      ]
+    },
+    "03": {
+      "length": 17,
+      "fields": [
+        {
+          "name": "record_type",
+          "start": 1,
+          "end": 2,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "document_type",
+          "start": 3,
+          "end": 4,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "document",
+          "start": 5,
+          "end": 15,
+          "width": 11,
+          "kind": "n"
+        },
+        {
+          "name": "role",
+          "start": 16,
+          "end": 17,
+          "width": 2,
+          "kind": "n"
+        }
+      ]
+    },
+    "04": {
+      "length": 154,
+      "fields": [
+        {
+          "name": "record_type",
+          "start": 1,
+          "end": 2,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "deposit_type",
+          "start": 3,
+          "end": 4,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "number",
+          "start": 5,
+          "end": 26,
+          "width": 22,
+          "kind": "n"
+        },
+        {
+          "name": "branch",
+          "start": 27,
+          "end": 31,
+          "width": 5,
+          "kind": "n"
+        },
+        {
+          "name": "opened",
+          "start": 32,
+          "end": 39,
+          "width": 8,
+          "kind": "n"
+        },
+        {
+          "name": "foreign_beneficiary",
+          "start": 40,
+          "end": 40,
+          "width": 1,
+          "kind": "n"
+        },
+        {
+          "name": "maturity",
+          "start": 41,
+          "end": 48,
+          "width": 8,
+          "kind": "n"
+        },
+        {
+          "name": "document_type",
+          "start": 49,
+          "end": 50,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "document",
+          "start": 51,
+          "end": 61,
+          "width": 11,
+          "kind": "n"
+        },
+        {
+          "name": "role",
+          "start": 62,
+          "end": 63,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "member_count",
+          "start": 64,
+          "end": 65,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "caja_valores",
+          "start": 66,
+          "end": 70,
+          "width": 5,
+          "kind": "n"
+        },
+        {
+          "name": "principal",
+          "start": 71,
+          "end": 88,
+          "width": 18,
+          "kind": "n"
+        },
+        {
+          "name": "interest",
+          "start": 89,
+          "end": 106,
+          "width": 18,
+          "kind": "n"
+        },
+        {
+          "name": "principal_original",
+          "start": 107,
+          "end": 124,
+          "width": 18,
+          "kind": "n"
+        },
+        {
+          "name": "interest_original",
+          "start": 125,
+          "end": 142,
+          "width": 18,
+          "kind": "n"
+        },
+        {
+          "name": "currency",
+          "start": 143,
+          "end": 145,
+          "width": 3,
+          "kind": "a"
+        },
+        {
+          "name": "event",
+          "start": 146,
+          "end": 146,
+          "width": 1,
+          "kind": "a"
+        },
+        {
+          "name": "event_date",
+          "start": 147,
+          "end": 154,
+          "width": 8,
+          "kind": "n"
+        }
+      ]
+    },
+    "05": {
+      "length": 18,
+      "fields": [
+        {
+          "name": "record_type",
+          "start": 1,
+          "end": 2,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "document_type",
+          "start": 3,
+          "end": 4,
+          "width": 2,
+          "kind": "n"
+        },
+        {
+          "name": "document",
+          "start": 5,
+          "end": 15,
+          "width": 11,
+          "kind": "n"
+        },
+        {
+          "name": "foreign_beneficiary",
+          "start": 16,
+          "end": 16,
+          "width": 1,
+          "kind": "n"
+        },
+        {
+          "name": "role",
+          "start": 17,
+          "end": 18,
+          "width": 2,
+          "kind": "n"
+        }
+      ]
+    }
+  }
+}

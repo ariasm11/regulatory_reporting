@@ -1,0 +1,6 @@
+# Preserve regulatory/sample source bytes across checkouts; hashes include CRLF.
+*.csv -text -diff
+examples/**/*.txt -text -diff
+
+web/data/**/*.txt -text -diff
+web/data/**/*.zip -text -diff

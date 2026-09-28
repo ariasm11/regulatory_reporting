@@ -1,0 +1,19 @@
+{
+  "status": "LOCAL_REFERENCE_ONLY_CLOUD_NOT_EXECUTED",
+  "data_directory": "data/sample",
+  "period": "202608",
+  "transactions": {
+    "row_count": 1200,
+    "content_sha256": "b7ec7528001d749d7e9d38f6e5109606a2f19f12a465c2b892ebc86bb93ce04d"
+  },
+  "account_count": 50,
+  "reported_accounts": 4,
+  "record_counts": {
+    "01": 1,
+    "02": 4,
+    "04": 1
+  },
+  "txt_sha256": "9ce7bc703a1037e78d7aca9fbc08a5c5ee9d6813698823408311ad598a97741c",
+  "zip_sha256": "dd2ee95bece68e7e2b9c301fb1b449c0c646a563efd8fdca4d3fb1716d346522",
+  "period_transactions": 200
+}

@@ -1,0 +1,17 @@
+{
+  "synthetic": true,
+  "seed": 4298,
+  "transaction_count": 1200,
+  "customers": 50,
+  "accounts": 50,
+  "periods": [
+    "202603",
+    "202604",
+    "202605",
+    "202606",
+    "202607",
+    "202608"
+  ],
+  "transaction_sha256": "69b61495d016ef6fd5c4cf51c61ef4fc89412138f7e1de00d75411e5b3d33aac",
+  "disclaimer": "Artificial numeric IDs may coincide by chance with real IDs. Never submit."
+}

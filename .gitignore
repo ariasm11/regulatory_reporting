@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+*.zip
+data/portfolio/
+output/
+downloads/
+*.pem
+*credentials*.json
+service-account*.json
+data/trial_100k/
+
+# Small synthetic downloadable ZIPs are part of the static demo.
+!web/data/**/*.zip

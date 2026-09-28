@@ -1,0 +1,65 @@
+{
+  "status": "PASS_LOCAL_CONTROLS_NOT_ARCA_ACCEPTANCE",
+  "engine": "local",
+  "run_id": "d63e66c4f93b3bf8",
+  "period": "202608",
+  "sequence": 1,
+  "rules_id": "rg4298-title-I-reviewed-20260928",
+  "input_hashes": {
+    "accounts.json": "82d8267b4dd656176ca91161a5600cd96cbeb82534f8966b7df4e1f6b52cf211",
+    "customers.json": "5117b78a7267163eeaba4c2ee4633b987f5ce707addc90716b864fabe7133a7f",
+    "manifest.json": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+    "members.json": "1fcabf38e5a5baf8fab725805b2f77b39d96473427f1e1afff9f22c10a70e985",
+    "snapshots.csv": "541a02fed1e218f6412bcf1c92083847393b50ebe36d8e0647809a59019f3571",
+    "term_deposits.json": "a3f300cde57b2cd240056d995c145d665083a49b9bdbbb34899b758a74063a51",
+    "transactions.csv": "8d80b8ff0477f253d717feaa4a89d59324e73f02f435890843ecbc1dcc08d562"
+  },
+  "code_hashes": {
+    "siter/__init__.py": "e1c9d3fad81cc0a963ca32b816f42290857522e15e5721ad6b05eeb12fda7c3c",
+    "siter/bigquery.py": "9b5bf67d46e82e955ed9dd3052269b4602985f5230d51f423855221eae9f074b",
+    "siter/common.py": "9bec3e6d3bfc08d0b77a48ade42acda82b3ab27794f0cd8a447fd9d5c43c4ffe",
+    "siter/export.py": "b01b597cd73243bbb1af0f5ca7bddc190f0f909e34c35826d4c20f1dccc475aa",
+    "siter/generate.py": "3e7b8fb97dacdd1546dbc6b85ed6a4043b59c86d7c426017bdf63b57b4237971",
+    "siter/pipeline.py": "5a781cdccc4f8acb150169d677a41d5819812ada76496d52834cd705fb483521",
+    "siter/run.py": "70f3149cd0fcd2529f789d1b51168fc19e6546f784cf773ca96b4acb34c6d811",
+    "siter/validate.py": "72808e7a32a89f893498e83178d9be598196b4706e23ded3555a27cac7ce6036",
+    "config/layout_v500.json": "d727c3d86afaa58791f55630edbc8ce5d1dfd0abd15e393573ea0d153e78b9b3",
+    "config/reporting.json": "914baaab0a3666505336b13b5dd68c28eaa90816ec8a4c6b436c501daefaf61b",
+    "sql/monthly.sql": "5f12a93c2714760d70d365d9880d544c444b70589e921ec34c8d424bae4736c1"
+  },
+  "txt_sha256": "d4d8b75468472758e444748bd2d75ee7b3a90b81307b3767f87107c86a3cc762",
+  "zip_sha256": "71f6941532cf910e63f82512125846ab177b9b876ea1366559bd5f0f7ee1b08f",
+  "file": "F0943.30999999995.20260800.0001.txt",
+  "bytes": 2118,
+  "quality": {
+    "input_transactions": 9,
+    "period_transactions": 9,
+    "reconciliation_difference_cents": 0
+  },
+  "record_counts": {
+    "01": 1,
+    "02": 7,
+    "03": 1,
+    "04": 1,
+    "05": 1
+  },
+  "totals_pesos": {
+    "credits": 80000000,
+    "cash": 10000000,
+    "balance": -36000000,
+    "card": 50000000,
+    "principal": 100000000,
+    "interest": 1000
+  },
+  "account_count": 10,
+  "reported_accounts": 7,
+  "model_seconds": 0.001,
+  "total_seconds": 0.008,
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "limitations": [
+    "Synthetic identifiers; never transmit this demo",
+    "Header length 255 follows positions; prose says 43",
+    "No official ARCA validator or registered identity verification"
+  ]
+}

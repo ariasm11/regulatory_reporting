@@ -1,0 +1,20 @@
+{
+  "status": "LOCAL_REFERENCE_ONLY_CLOUD_NOT_EXECUTED",
+  "row_limit": 100000,
+  "customers": 2000,
+  "period": "202608",
+  "txt_sha256": "ebed9445362526df1e2ed27074a5b51e1cca8f8ec840513db3c218daa48fc674",
+  "zip_sha256": "6771d372f41f1e40f274f1eeb18ac08682d0c8c3199a125aaceb5c3dda730c8a",
+  "reported_accounts": 249,
+  "record_counts": {
+    "01": 1,
+    "02": 249,
+    "03": 34,
+    "04": 39
+  },
+  "quality": {
+    "input_transactions": 100000,
+    "period_transactions": 16666,
+    "reconciliation_difference_cents": 0
+  }
+}
