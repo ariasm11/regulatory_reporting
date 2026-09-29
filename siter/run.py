@@ -10,7 +10,7 @@ from .export import serialize
 from .validate import validate
 
 
-def execute(data,out,period,sequence=0,engine='local',project=None,dataset='siter_portfolio',location='US'):
+def execute(data,out,period,sequence=0,engine='local',project=None,dataset='siter_portfolio',location='US',reporter=None,entity=None):
     data,out=Path(data),Path(out)
     begin=time.perf_counter()
     cfg,people,accounts,members,deposits=inputs(data,period)
@@ -24,7 +24,7 @@ def execute(data,out,period,sequence=0,engine='local',project=None,dataset='site
         metrics=select_metrics(metrics,people,accounts,deposits,period,cfg)
     modeled=time.perf_counter()
     detail=records(metrics,people,accounts,members,deposits,period)
-    name,raw=serialize(detail,period,sequence)
+    name,raw=serialize(detail,period,sequence,reporter,entity)
     checked=validate(raw,name)
     # Compare independently parsed TXT totals against pre-serialization model values.
     selected=[r for r in metrics if r['reportable']]
@@ -41,7 +41,7 @@ def execute(data,out,period,sequence=0,engine='local',project=None,dataset='site
     source_hashes={p.name:digest(p) for p in sorted(data.iterdir()) if p.is_file()}
     code_hashes={str(p.relative_to(ROOT)):digest(p) for folder in ('siter','config','sql') for p in sorted((ROOT/folder).glob('*')) if p.is_file()}
     import hashlib
-    run_id=hashlib.sha256(json.dumps([source_hashes,code_hashes,period,sequence,engine],sort_keys=True).encode()).hexdigest()[:16]
+    run_id=hashlib.sha256(json.dumps([source_hashes,code_hashes,period,sequence,engine,reporter,entity],sort_keys=True).encode()).hexdigest()[:16]
     dest=out/f'{period}_{sequence:02}_{run_id}'
     dest.mkdir(parents=True,exist_ok=True)
     txt=dest/name;txt.write_bytes(raw)
@@ -53,13 +53,14 @@ def execute(data,out,period,sequence=0,engine='local',project=None,dataset='site
     dump(dest/'account_decisions.json',metrics)
     dump(dest/'record_fields.json',detail)
     summary=dict(status='PASS_LOCAL_CONTROLS_NOT_ARCA_ACCEPTANCE',engine=engine,run_id=run_id,period=period,
-                 sequence=sequence,rules_id=cfg['rules_id'],input_hashes=source_hashes,code_hashes=code_hashes,
+                 sequence=sequence,reporter_cuit=reporter or cfg['synthetic_reporter_cuit'],
+                 entity_code=entity or cfg['synthetic_entity_code'],rules_id=cfg['rules_id'],input_hashes=source_hashes,code_hashes=code_hashes,
                  txt_sha256=digest(txt),zip_sha256=digest(zipped),file=name,bytes=len(raw),
                  quality=quality,record_counts=checked['counts'],totals_pesos=checked['totals_pesos'],
                  account_count=len(accounts),reported_accounts=len(selected),
                  model_seconds=round(modeled-begin,3),total_seconds=round(time.perf_counter()-begin,3),
                  python=platform.python_version(),platform=platform.platform(),
-                 limitations=['Synthetic identifiers; never transmit this demo',
+                 limitations=['Synthetic or anonymized identifiers; never transmit this demo',
                               'Header length 255 follows positions; prose says 43',
                               'No official ARCA validator or registered identity verification'])
     dump(dest/'audit.json',summary)

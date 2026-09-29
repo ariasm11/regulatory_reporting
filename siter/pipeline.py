@@ -24,7 +24,9 @@ def inputs(data, period):
     cfg = load(ROOT/'config/reporting.json')
     require(period in cfg['valid_periods'], 'period outside reviewed rule/calendar range')
     manifest=load(data/'manifest.json')
-    require(manifest.get('synthetic') is True, 'demo requires synthetic data')
+    require(manifest.get('synthetic') is True or
+            (manifest.get('data_classification') == 'anonymized' and manifest.get('anonymization_attested') is True),
+            'demo requires synthetic data or explicitly attested anonymized data')
     if manifest.get('transaction_sha256'):
         require(digest(data/'transactions.csv')==manifest['transaction_sha256'], 'source integrity failure; incomplete or modified dataset')
     people = indexed(load(data/'customers.json'),'customer_id')

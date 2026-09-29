@@ -2,6 +2,8 @@
 
 ## Hitos cerrados
 
+- Workspace ejecutable v1: acceso autenticado, contrato y carga CSV, validación, ejecuciones aisladas, resultados y eliminación de lotes. Importación opcional de transacciones desde fuentes BigQuery autorizadas, con motor local. Ver `execution_console.md`.
+
 - Motor Python y modelo SQL de SITER A / F.943 para el alcance documentado.
 - Exportador TXT, ZIP y lector independiente, conciliaciones y 21 pruebas locales.
 - Muestra sintética de 1.200 transacciones y 50 cuentas, seis meses.

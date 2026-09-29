@@ -16,3 +16,6 @@ data/trial_100k/
 
 node_modules/
 .vite/
+
+# Private execution service state: users, sessions, uploads and outputs.
+runtime/

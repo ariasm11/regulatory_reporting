@@ -17,9 +17,24 @@ I built this project to mirror a neobank's local regulatory reporting workflow, 
 
 ## Interface
 
-The complete static console is included in [`web/`](web/README.md). Run `python3 -m http.server 8000 --directory web` and open `http://localhost:8000`. It shows saved results without querying BigQuery.
+I added an authenticated execution workspace for anonymized datasets: CSV upload, schema and business validation, report configuration, background execution, private downloads and run deletion. It reuses the existing account views, controls and TXT inspector for each completed run.
 
-## Interface screenshots
+```bash
+python3 -m siter.server add-user analyst
+python3 -m siter.server serve
+```
+
+Open `http://127.0.0.1:8000`. See the [execution guide](docs/execution_console.md) and [CSV contract](docs/csv_contract.md) for access, templates, limits and optional authorized BigQuery imports. The UI processes reports locally; BigQuery SQL execution remains a separate CLI workflow.
+
+The original static sample console is also included in [`web/`](web/README.md). Run `python3 -m http.server 8000 --directory web` and open `http://localhost:8000` to inspect saved sample results without a backend. A public hosted demo is not available yet.
+
+## Execution workspace
+
+Authenticated CSV upload, report configuration, data contract and a completed run with private downloads.
+
+![Execution workspace showing report configuration, CSV contract and a completed run](docs/images/ux-execution.jpg)
+
+## Saved sample screenshots
 
 Real captures of the August 2026 sample. The console displays saved results and does not query BigQuery.
 
@@ -72,7 +87,7 @@ Create a complete replacement for the same period using `--sequence 1`; it regen
 
 ## Reporting console
 
-The UX uses saved sample outputs: overview, account decisions, controls, a fixed-position TXT inspector and monthly history. It makes no BigQuery calls. Run `python3 -m scripts.export_ux --out web/data` to reproduce its data and downloads. Only August carries the recorded BigQuery parity evidence; other periods are labeled local. See `docs/ux_es.md`.
+The offline reference UX uses saved sample outputs: overview, account decisions, controls, a fixed-position TXT inspector and monthly history. It makes no BigQuery calls. Run `python3 -m scripts.export_ux --out web/data` to reproduce its data and downloads. Only August carries the recorded BigQuery parity evidence; other periods are labeled local. See `docs/ux_es.md`.
 
 ## Optional controlled cloud trial
 

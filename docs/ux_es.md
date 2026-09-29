@@ -1,5 +1,11 @@
 # Consola de reporting SITER A
 
+## Workspace de ejecución v1
+
+La consola ahora incluye carga de CSV anonimizados, autenticación, validación previa, configuración, ejecución en segundo plano y resultados por usuario. Para iniciarla: `python3 -m siter.server add-user analyst` y `python3 -m siter.server serve`; abrir `http://127.0.0.1:8000`. Ver [guía de ejecución](execution_console.md) y [contrato CSV](csv_contract.md). La importación opcional desde BigQuery lee fuentes autorizadas y procesa localmente; no ejecuta el modelo SQL desde la UX.
+
+## Referencia estática original
+
 La consola está incluida en `web/`. Para abrirla localmente, ejecutar `python3 -m http.server 8000 --directory web` desde la raíz del repositorio y visitar `http://localhost:8000`. El README incluye capturas; la demo pública está pendiente.
 
 ## Alcance

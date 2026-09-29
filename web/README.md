@@ -1,5 +1,11 @@
 # Reporting console
 
+## Authenticated execution workspace
+
+From the repository root, run `python3 -m siter.server add-user analyst`, then `python3 -m siter.server serve`. Open `http://127.0.0.1:8000`. The workspace accepts anonymized CSV datasets, validates them, runs the pipeline and opens results in the existing console. See [execution guide](../docs/execution_console.md) and [CSV contract](../docs/csv_contract.md). A static server cannot execute the pipeline.
+
+## Offline sample console
+
 Static HTML/CSS/JavaScript interface with saved synthetic sample outputs. No API keys, backend or BigQuery queries.
 
 From the repository root:
