@@ -27,6 +27,7 @@ class Server(ThreadingHTTPServer):
         self.service=service;self.origin=origin;self.secure=origin.startswith('https://')
         self.attempts=defaultdict(deque);self.rate_lock=threading.Lock();self.last_cleanup=0
         self.slots=threading.BoundedSemaphore(16)
+        self.upload_slots=threading.BoundedSemaphore(1)
         super().__init__(address,Handler)
 
     def process_request(self,request,address):
@@ -99,6 +100,9 @@ class Handler(BaseHTTPRequestHandler):
 
     def handle_request(self,method):
         try:
+            if method=='GET' and urlsplit(self.path).path=='/healthz':
+                with self.server.service.connect() as db: db.execute('SELECT 1').fetchone()
+                self.send(200,{'status':'ok'});return
             # Fixed host and origin defeat DNS rebinding and cross-site writes.
             if self.headers.get('Host')!=urlsplit(self.server.origin).netloc:
                 raise Problem(403,'Host not allowed')
@@ -136,7 +140,12 @@ class Handler(BaseHTTPRequestHandler):
             self.send(200,template_zip(path=='/api/sample.zip'),'application/zip',{'Content-Disposition':'attachment; filename="'+path.rsplit('/',1)[-1]+'"'});return
         if path=='/api/runs':
             if method=='GET': self.send(200,s.list_runs(uid));return
-            if method=='POST': self.send(202,s.create(session,self.body()));return
+            if method=='POST':
+                if not self.server.upload_slots.acquire(blocking=False):
+                    raise Problem(429,'Another upload is being received; try again shortly')
+                try: self.send(202,s.create(session,self.body()))
+                finally: self.server.upload_slots.release()
+                return
         parts=path.strip('/').split('/')
         if len(parts)>=3 and parts[:2]==['api','runs']:
             rid=parts[2]

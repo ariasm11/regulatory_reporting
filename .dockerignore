@@ -1,0 +1,16 @@
+**
+!Dockerfile
+!siter/
+!siter/**
+!config/
+!config/reporting.json
+!config/layout_v500.json
+!sql/
+!sql/**
+!web/
+!web/**
+!data/
+!data/sample/
+!data/sample/**
+**/__pycache__/
+**/*.pyc

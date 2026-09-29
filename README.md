@@ -34,6 +34,43 @@ Authenticated CSV upload, report configuration, data contract and a completed ru
 
 ![Execution workspace showing report configuration, CSV contract and a completed run](docs/images/ux-execution.jpg)
 
+## Execution flow
+
+1. Sign in with an individual account.
+2. Load the included sample or upload the required anonymized CSV files.
+3. Review validation results; correct rejected batches before generating a report.
+4. Generate the TXT/ZIP, inspect account decisions and download the audit evidence.
+5. Delete the run when finished. Every run belongs to its user.
+
+<details>
+<summary>1. Sign-in and 2. Dataset upload</summary>
+
+![Sign-in screen for the execution workspace](docs/images/flow-login.jpg)
+
+![CSV upload with sample files, reporting configuration and data contract](docs/images/flow-upload.jpg)
+
+</details>
+
+<details>
+<summary>3. Validation: ready to generate or blocked by errors</summary>
+
+![Validated batch ready to generate a report](docs/images/flow-ready.jpg)
+
+![Duplicate transaction detected with a CSV filename and row reference](docs/images/flow-errors.jpg)
+
+</details>
+
+<details>
+<summary>4. Completed execution and downloads</summary>
+
+![Completed report with review, TXT, ZIP, audit and deletion actions](docs/images/flow-result.jpg)
+
+</details>
+
+## Public deployment
+
+A Docker image definition and Render Blueprint are included for an HTTPS demo with private user accounts and persistent storage. **Hosting has not been provisioned yet.** See the [deployment guide](docs/hosting.md) for setup, credentials, costs and verification. No public URL is advertised until the hosted workflow has been tested.
+
 ## Saved sample screenshots
 
 Real captures of the August 2026 sample. The console displays saved results and does not query BigQuery.

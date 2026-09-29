@@ -234,6 +234,13 @@ class ConsoleTests(unittest.TestCase):
             table.num_rows=1;table.table_type='VIEW'
             with self.assertRaises(ValueError): self.service.import_bigquery('safe')
 
+    def test_health_probe_and_bounded_upload_admission(self):
+        status,body,_=self.request('/healthz',headers={'Host':'internal-health','Cookie':''})
+        self.assertEqual((status,body),(200,{'status':'ok'}))
+        self.server.upload_slots.acquire()
+        try:self.assertEqual(self.request('/api/runs','POST',self.payload())[0],429)
+        finally:self.server.upload_slots.release()
+
     def test_body_limit_and_session_revocation(self):
         self.assertEqual(self.request('/api/runs','POST',{}, {'Content-Length':str(25*1024*1024)})[0],413)
         self.service.add_user('analyst','new-example-password')

@@ -11,3 +11,10 @@ jobs:
       - run: python -m unittest discover -s tests -v
       - run: python -m siter.run --data data/sample --period 202608 --out output
       - run: node --check web/workspace.js && node --check web/app.js
+      - name: Build hosted container
+        run: docker build -t siter-demo .
+      - name: Smoke test hosted entrypoint
+        run: |
+          docker run -d --name siter-smoke -p 127.0.0.1:18000:10000 -e SITER_PUBLIC_ORIGIN=https://demo.example -e SITER_BOOTSTRAP_USER=smoketest -e SITER_BOOTSTRAP_PASSWORD=ci-smoke-test-password siter-demo
+          trap 'docker rm -f siter-smoke' EXIT
+          python scripts/smoke_hosted.py
