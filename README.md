@@ -1,5 +1,7 @@
 # SITER A / F.943 — Regulatory Reporting Portfolio
 
+**[Open the live demo →](https://siter-reporting.onrender.com/)** · Login required · Anonymized data only
+
 A reproducible finance data pipeline for Argentine account reporting: **synthetic source transactions → monthly account models → eligibility decisions → fixed-width F.943 TXT → independent parser and reconciliation**.
 
 I built this project to mirror a neobank's local regulatory reporting workflow, combining SQL modeling, ETL, regulatory specifications, data quality controls and root-cause analysis in a reproducible pipeline.
@@ -26,7 +28,7 @@ python3 -m siter.server serve
 
 Open `http://127.0.0.1:8000`. See the [execution guide](docs/execution_console.md) and [CSV contract](docs/csv_contract.md) for access, templates, limits and optional authorized BigQuery imports. The UI processes reports locally; BigQuery SQL execution remains a separate CLI workflow.
 
-The original static sample console is also included in [`web/`](web/README.md). Run `python3 -m http.server 8000 --directory web` and open `http://localhost:8000` to inspect saved sample results without a backend. A public hosted demo is not available yet.
+The original static sample console is also included in [`web/`](web/README.md). Run `python3 -m http.server 8000 --directory web` and open `http://localhost:8000` to inspect saved sample results without a backend.
 
 ## Execution workspace
 
@@ -69,7 +71,7 @@ Authenticated CSV upload, report configuration, data contract and a completed ru
 
 ## Public deployment
 
-A Docker image definition and a **Render Free** Blueprint are included for an HTTPS demo with private user accounts and temporary storage. Users and run files reset when the free instance restarts; the configured initial login is recreated automatically. Download results before leaving. A separate `render.persistent.yaml` is available for an explicitly selected paid deployment. **Hosting has not been provisioned yet.** See the [deployment guide](docs/hosting.md) for setup, credentials, costs and verification. No public URL is advertised until the hosted workflow has been tested.
+A Docker image definition and a **Render Free** Blueprint are included for an HTTPS demo with private user accounts and temporary storage. Users and run files reset when the free instance restarts; the configured initial login is recreated automatically. Download results before leaving. A separate `render.persistent.yaml` is available for an explicitly selected paid deployment. **The demo is deployed at [siter-reporting.onrender.com](https://siter-reporting.onrender.com/); login is required.** See the [deployment guide](docs/hosting.md) for setup, credentials, costs and verification.
 
 ## Saved sample screenshots
 
