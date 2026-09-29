@@ -21,4 +21,5 @@ c=http.client.HTTPConnection('127.0.0.1',18000,timeout=10)
 c.request('GET','/api/config',headers={'Host':'demo.example','Cookie':cookie.split(';')[0]})
 r=c.getresponse();data=json.loads(r.read());c.close()
 assert r.status==200 and data['contract']['version']=='csv-v1'
+assert data['ephemeral'] is True
 print('Hosted container: health, bootstrap, secure session and authenticated config passed.')

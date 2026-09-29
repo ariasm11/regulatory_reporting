@@ -33,7 +33,7 @@ def password_hash(password,salt):
 
 
 class Service:
-    def __init__(self,root,bigquery_sources=None,recover=True):
+    def __init__(self,root,bigquery_sources=None,recover=True,ephemeral=False):
         self.root=Path(root).resolve();self.root.mkdir(parents=True,exist_ok=True,mode=0o700)
         os.chmod(self.root,0o700)
         self.instance_lock=None
@@ -47,6 +47,7 @@ class Service:
         self.lock=threading.RLock();self.pool=ThreadPoolExecutor(max_workers=1)
         self.pending=0
         self.sources=bigquery_sources or {}
+        self.ephemeral=ephemeral
         with self.connect() as db:
             db.executescript('''
               CREATE TABLE IF NOT EXISTS users(id TEXT PRIMARY KEY, username TEXT UNIQUE, salt TEXT, hash TEXT);
@@ -102,7 +103,7 @@ class Service:
 
     def config(self,username):
         cfg=load(ROOT/'config/reporting.json')
-        return dict(rules=cfg,contract=contracts.contract(),sources=self.source_options(username),retention_hours=24,max_body_bytes=24*1024*1024)
+        return dict(rules=cfg,contract=contracts.contract(),sources=self.source_options(username),retention_hours=24,ephemeral=self.ephemeral,max_body_bytes=24*1024*1024)
 
     def get(self,user_id,run_id):
         if not re.fullmatch(r'[a-f0-9]{32}',run_id): raise Problem(404,'Run not found')

@@ -69,7 +69,7 @@ Authenticated CSV upload, report configuration, data contract and a completed ru
 
 ## Public deployment
 
-A Docker image definition and Render Blueprint are included for an HTTPS demo with private user accounts and persistent storage. **Hosting has not been provisioned yet.** See the [deployment guide](docs/hosting.md) for setup, credentials, costs and verification. No public URL is advertised until the hosted workflow has been tested.
+A Docker image definition and a **Render Free** Blueprint are included for an HTTPS demo with private user accounts and temporary storage. Users and run files reset when the free instance restarts; the configured initial login is recreated automatically. Download results before leaving. A separate `render.persistent.yaml` is available for an explicitly selected paid deployment. **Hosting has not been provisioned yet.** See the [deployment guide](docs/hosting.md) for setup, credentials, costs and verification. No public URL is advertised until the hosted workflow has been tested.
 
 ## Saved sample screenshots
 

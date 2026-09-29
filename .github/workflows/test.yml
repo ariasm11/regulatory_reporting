@@ -15,6 +15,6 @@ jobs:
         run: docker build -t siter-demo .
       - name: Smoke test hosted entrypoint
         run: |
-          docker run -d --name siter-smoke -p 127.0.0.1:18000:10000 -e SITER_PUBLIC_ORIGIN=https://demo.example -e SITER_BOOTSTRAP_USER=smoketest -e SITER_BOOTSTRAP_PASSWORD=ci-smoke-test-password siter-demo
+          docker run -d --name siter-smoke -p 127.0.0.1:18000:10000 -e SITER_EPHEMERAL=true -e SITER_STATE_DIR=/tmp/siter-state -e SITER_PUBLIC_ORIGIN=https://demo.example -e SITER_BOOTSTRAP_USER=smoketest -e SITER_BOOTSTRAP_PASSWORD=ci-smoke-test-password siter-demo
           trap 'docker rm -f siter-smoke' EXIT
           python scripts/smoke_hosted.py

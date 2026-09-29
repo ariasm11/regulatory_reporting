@@ -14,7 +14,7 @@ function showLogin(){session=null;clearTimeout(poll);files={};$('#files-input').
 function fileList(){$('#file-list').innerHTML=Object.keys(files).map(name=>`<li>${escapeHTML(name)} · ${new Blob([files[name]]).size.toLocaleString('es-AR')} bytes</li>`).join('')}
 function sourceChanged(){const bq=$('#source-input').value!=='csv';if(bq)delete files['transactions.csv'];fileList();$('#source-note').textContent=bq?'Se leerá la tabla autorizada, sin SQL de usuario. Adjuntá los CSV complementarios. El modelo se ejecuta en Python; no implica paridad SQL en cloud.':'UTF-8, separador coma. Hasta 100.000 filas por archivo y 24 MiB por solicitud.'}
 async function openWorkspace(){
- config=await api('/api/config');$('#login').hidden=true;$('#workspace').hidden=false;
+ config=await api('/api/config');$('#retention-note').textContent=config.ephemeral?'Demo gratuita: los usuarios, las sesiones y los archivos se reinician cuando el servidor se reinicia. Descargá tus resultados al terminar; no se garantiza conservarlos 24 horas. Solo datos anonimizados, sin presentación ante ARCA.':'Solo datos sintéticos o anonimizados. Los lotes vencen a las 24 horas y podés eliminarlos antes. Sin presentación ante ARCA.';$('#login').hidden=true;$('#workspace').hidden=false;
  $('#identity').innerHTML=`<span>${escapeHTML(session.username)}</span><button class="button small" id="logout">Salir</button>`;
  $('#logout').onclick=async()=>{try{await api('/api/logout',{method:'POST'});showLogin();message()}catch(e){message(e.message)}};
  $('#period-input').innerHTML=[...config.rules.valid_periods].reverse().map(p=>`<option>${escapeHTML(p)}</option>`).join('');

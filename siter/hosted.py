@@ -32,7 +32,7 @@ def bootstrap(service,username,password):
 def main():
     origin=public_origin(os.environ.get('SITER_PUBLIC_ORIGIN') or os.environ.get('RENDER_EXTERNAL_URL',''))
     state=Path(os.environ.get('SITER_STATE_DIR','/var/data/siter'))
-    if not state.is_absolute(): raise ValueError('SITER_STATE_DIR must be an absolute persistent path')
+    if not state.is_absolute(): raise ValueError('SITER_STATE_DIR must be an absolute state path')
     port=int(os.environ.get('PORT','10000'))
     if not 1024<=port<=65535: raise ValueError('PORT must be between 1024 and 65535')
     username=os.environ.pop('SITER_BOOTSTRAP_USER','')
@@ -43,7 +43,7 @@ def main():
         os.chown(state,10001,10001)
         os.setgroups([]);os.setgid(10001);os.setuid(10001)
     os.umask(0o077)
-    service=Service(state)
+    service=Service(state,ephemeral=os.environ.get('SITER_EPHEMERAL')=='true')
     try:
         bootstrap(service,username,password)
         del password

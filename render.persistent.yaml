@@ -1,17 +1,20 @@
-# Free demonstration: no persistent disk. Users and runs reset after a restart.
+# Deploying this blueprint provisions PAID compute + a persistent disk.
+# The repository alone does not create or charge for any service.
 services:
   - type: web
     name: siter-reporting
     runtime: docker
-    plan: free
+    plan: 0.5c-512mb
     numInstances: 1
     autoDeployTrigger: 'off'
     healthCheckPath: /healthz
+    disk:
+      name: siter-private-state
+      mountPath: /var/data
+      sizeGB: 1
     envVars:
-      - key: SITER_EPHEMERAL
-        value: "true"
       - key: SITER_STATE_DIR
-        value: /tmp/siter-state
+        value: /var/data/siter
       - key: SITER_BOOTSTRAP_USER
         sync: false
       - key: SITER_BOOTSTRAP_PASSWORD

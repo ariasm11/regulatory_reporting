@@ -22,3 +22,13 @@ class HostedTests(unittest.TestCase):
                 self.assertEqual(s.session(token)['username'],'analyst')
                 with self.assertRaises(Problem):s.login('analyst','different-password')
             finally:s.close()
+
+    def test_fresh_ephemeral_instance_recreates_login(self):
+        for _ in range(2):
+            with tempfile.TemporaryDirectory() as d:
+                s=Service(Path(d),ephemeral=True)
+                try:
+                    self.assertTrue(bootstrap(s,'analyst','test-only-password'))
+                    token,_=s.login('analyst','test-only-password')
+                    self.assertTrue(s.config(s.session(token)['username'])['ephemeral'])
+                finally:s.close()
